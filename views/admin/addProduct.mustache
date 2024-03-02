@@ -1,0 +1,24 @@
+{{> layouts/layout}}
+
+<div class="ui container">
+    <h2 class="ui header">Add New Product</h2>
+    <form class="ui form" action="/admin/addProduct" method="POST">
+        <div class="field">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" required>
+        </div>
+        <div class="field">
+            <label>Price</label>
+            <input type="number" name="price" placeholder="Price" required>
+        </div>
+        <div class="field">
+            <label>Spiciness</label>
+            <input type="text" name="spiciness" placeholder="Spiciness">
+        </div>
+        <div class="field">
+            <label>Description</label>
+            <textarea name="description" placeholder="Description"></textarea>
+        </div>
+        <button class="ui button" type="submit">Create Product</button>
+    </form>
+</div>

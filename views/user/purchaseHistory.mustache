@@ -1,0 +1,22 @@
+<!-- views/user/purchaseHistory.mustache -->
+{{> layouts/layout}}
+
+<div class="ui container">
+    <h2 class="ui header">Purchase History</h2>
+    {{#noOrders}}
+    <p>No purchase history available.</p>
+    {{/noOrders}}
+    {{^noOrders}}
+    {{#orders}}
+    <div class="ui segment">
+        <h3>Order Date: {{orderDate}}</h3>
+        <ul>
+            {{#products}}
+            <li>{{product.name}} - Quantity: {{quantity}}</li>
+            {{/products}}
+        </ul>
+        <p>Total Price: ${{totalPrice}}</p>
+    </div>
+    {{/orders}}
+    {{/noOrders}}
+</div>

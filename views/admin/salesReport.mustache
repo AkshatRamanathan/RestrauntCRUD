@@ -1,0 +1,27 @@
+{{> layouts/layout}}
+
+<div class="ui container">
+    <h2 class="ui header">Sales Report</h2>
+
+    <h3>Total Sales: ${{totalSales}}</h3>
+
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity Sold</th>
+                <th>Total Sales</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#salesByProduct}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{quantity}}</td>
+                <td>${{sales}}</td>
+            </tr>
+            {{/salesByProduct}}
+        </tbody>
+    </table>
+</div>
+

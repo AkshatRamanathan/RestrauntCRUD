@@ -1,0 +1,28 @@
+{{> layouts/layout}}
+
+<div class="ui container">
+  <h2 class="ui header">Manage Users</h2>
+  <a class="ui button green" href="/admin/createUser">Add New User</a>
+  <table class="ui celled table">
+    <thead>
+      <tr><th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr></thead>
+    <tbody>
+      {{#users}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{email}}</td>
+        <td>{{role}}</td>
+        <td>
+          <!-- <button class="ui button blue onclick="location.href='/admin/editUser'">Edit</button> -->
+          <a href="/admin/editUser/{{id}}" class="ui button blue">edit</a>
+          <a href="/admin/deleteUser/{{id}}" class="ui button red">Delete</a>
+        </td>
+      </tr>
+      {{/users}}
+    </tbody>
+  </table>
+</div>

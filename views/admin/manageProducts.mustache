@@ -1,0 +1,32 @@
+{{> layouts/layout}}
+
+<div class="ui container">
+  <h2 class="ui header">Manage Products</h2>
+  <a class="ui button green" href="/admin/addProduct">Add New Product</a>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Spiciness</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#products}}
+      <tr id="product-{{_id}}">
+        <td>{{name}}</td>
+        <td>{{price}}</td>
+        <td>{{spiciness}}</td>
+        <td>{{description}}</td>
+        <td>
+          <a class="ui button blue" href="/admin/editProduct/{{_id}}">Edit</a>
+          <a class="ui button red" href="/admin/deleteProduct/{{_id}}">Delete</a>
+        </td>
+      </tr>
+      {{/products}}
+    </tbody>
+  </table>
+</div>
+

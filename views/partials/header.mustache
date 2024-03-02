@@ -1,0 +1,11 @@
+<header>
+    <div class="ui menu">
+        <a href="/" class="header item">Restaurant Management System</a>
+        <a href="{{#isLoggedIn}}{{dashboardLink}}{{/isLoggedIn}}{{^isLoggedIn}}/{{/isLoggedIn}}" class="header item">Home</a>
+
+
+        <div class="right menu">
+            <a href="/auth/logout" class="item">Logout</a>
+        </div>
+    </div>
+</header>

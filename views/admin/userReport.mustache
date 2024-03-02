@@ -1,0 +1,24 @@
+{{> layouts/layout}}
+
+<div class="ui container">
+  <h2 class="ui header">User Role Report</h2>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Email</th>
+        
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#users}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{email}}</td>
+        <td>{{role}}</td>
+      </tr>
+      {{/users}}
+    </tbody>
+  </table>
+</div>

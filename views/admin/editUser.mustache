@@ -1,0 +1,32 @@
+{{> layouts/layout}}
+
+<div class="ui container">
+    <h2 class="ui header">Edit User</h2>
+    <form class="ui form" action="/admin/editUser/{{user._id}}" method="POST">
+        <div class="field">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" value="{{user.name}}" required>
+        </div>
+        <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email" value="{{user.email}}" required>
+        </div>
+        <div class="field">
+            <label>New Password </label>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <div class="field">
+            <label>Role</label>
+            <select name="role" class="ui dropdown">
+               
+                <option value="{{user.role}}" {{#selected}} selected="selected"{{/selected}} >{{user.role}}</option>
+
+            </select>
+        </div>
+        <button class="ui button" type="submit">Update User</button>
+    </form>
+</div>
+
+<script>
+    $('.ui.dropdown').dropdown();
+</script>

@@ -1,0 +1,24 @@
+{{> layouts/layout}}
+
+<div class="ui container">
+    <h2 class="ui header">Edit Product</h2>
+    <form class="ui form" action="/admin/editProduct/{{product._id}}" method="POST">
+        <div class="field">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" value="{{product.name}}" required>
+        </div>
+        <div class="field">
+            <label>Price</label>
+            <input type="number" name="price" placeholder="Price" value="{{product.price}}" required>
+        </div>
+        <div class="field">
+            <label>Spiciness</label>
+            <input type="text" name="spiciness" placeholder="Spiciness" value="{{product.spiciness}}">
+        </div>
+        <div class="field">
+            <label>Description</label>
+            <textarea name="description" placeholder="Description">{{product.description}}</textarea>
+        </div>
+        <button class="ui button" type="submit">Update Product</button>
+    </form>
+</div>

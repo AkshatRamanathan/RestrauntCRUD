@@ -1,0 +1,51 @@
+{{> layouts/layout}}
+
+<div class="ui container">
+  {{#message}}
+  <div class="ui blue message">
+    {{{message}}}
+  </div>
+  {{/message}}
+  <h2 class="ui header">Available Products</h2>
+
+  <div class="ui four cards">
+
+    {{#products}}
+    <div class="card">
+      <div class="content">
+        <div class="header">{{name}}</div>
+        <div class="meta">
+          <span class="date">Price: ${{price}}</span>
+        </div>
+        <div class="description">
+          {{description}}
+        </div>
+      </div>
+      <div class="extra content">
+        <div>
+          <i class="spoon icon"></i>
+          Spiciness: {{spiciness}}
+        </div>
+      </div>
+      <div class="ui bottom attached button" onclick="buyProduct('{{_id}}')">
+        <i class="add icon"></i>
+        Buy Now
+      </div>
+    </div>
+    {{/products}}
+    {{^products}}
+    <div class="ui message">
+      <div class="header">
+        No Products Available
+      </div>
+      <p>Check back later for more products.</p>
+    </div>
+    {{/products}}
+  </div>
+</div>
+
+<script>
+  function buyProduct(productId) {
+    window.location.href = '/user/buyProduct/' + productId;
+  }
+</script>

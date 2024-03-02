@@ -1,0 +1,16 @@
+{{> layouts/layout}}
+
+<div class="ui container">
+  <h2 class="ui header">Login</h2>
+  <form class="ui form" action="/auth/login" method="POST">
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Email">
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Password">
+    </div>
+    <button class="ui button" type="submit">Login</button>
+  </form>
+</div>

@@ -1,0 +1,20 @@
+{{> layouts/layout}}
+
+<div class="ui segment">
+  <h2 class="ui header">Admin Dashboard</h2>
+  <div class="ui grid">
+    <div class="four wide column">
+      <div class="ui vertical fluid tabular menu">
+        <a class="item" href="/admin/manageUsers">Manage Users</a>
+        <a class="item" href="/admin/manageProducts">Manage Products</a>
+        <a class="item" href="/admin/salesReport">Sales Reports</a>
+        <a class="item" href="/admin/userReport">User Reports</a>
+      </div>
+    </div>
+    <div class="twelve wide stretched column">
+      <div class="ui segment">
+        Welcome {{user.name}}, to the Admin Dashboard!
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+{{> layouts/layout}}
+
+<div class="ui container">
+  <h2 class="ui header">User Dashboard</h2>
+  <div class="ui grid">
+    <div class="four wide column">
+      <div class="ui vertical fluid tabular menu">
+        <a class="item" href="/user/profile/{{user.id}}">Profile</a>
+        <a class="item" href="/user/viewProducts">View Products</a>
+        <a class="item" href="/user/purchaseHistory">Purchase History</a>
+      </div>
+    </div>
+    <div class="twelve wide stretched column">
+      <div class="ui segment">
+        Welcome {{user.name}},to your Dashboard!
+      </div>
+    </div>
+  </div>
+</div>
