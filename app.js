@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const mustacheExpress = require('mustache-express');
 const path = require('path');
 const jwt = require('jsonwebtoken');
-const config = require('./config'); // Ensure you have your database URI and JWT secret here
+// const config = require('./config'); // Ensure you have your database URI and JWT secret here
 
 // Importing route modules
 const authRoutes = require('./routes/authRoutes');
@@ -19,9 +19,9 @@ const { verifyTokenMiddleware } = require('./utils/auth');
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect(config.mongoURI, {})
-.then(() => console.log("MongoDB successfully connected"))
-.catch(err => console.error("MongoDB connection error: ", err));
+mongoose.connect(`mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_URI}:${process.env.MONGO_PORT}/${process.env.MONGO_DATABASE}?authSource=admin`, {})
+    .then(() => console.log("MongoDB successfully connected"))
+    .catch(err => console.error("MongoDB connection error: ", err));
 
 // Mustache Templating Engine Setup
 app.engine('mustache', mustacheExpress());
@@ -39,7 +39,7 @@ app.use((req, res, next) => {
     const token = req.cookies.authToken; // Assuming JWT token is stored in a cookie named 'authToken'
     if (token) {
         try {
-            const decoded = jwt.verify(token, config.jwtSecret);
+            const decoded = jwt.verify(token, process.env.JWT_SECRET);
             res.locals.isLoggedIn = true;
             res.locals.dashboardLink = decoded.role === 'admin' ? '/admin/dashboard' : '/user/dashboard';
         } catch (error) {

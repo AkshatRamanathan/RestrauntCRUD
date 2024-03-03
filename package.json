@@ -1,16 +1,16 @@
 {
-  "name": "Restero",
+  "name": "ExpressMVC",
   "version": "1.0.0",
   "description": "Express+ Mustache MVC Restraunt Application | MongoDB",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node --env-file=.env app.js",
+    "dev": "nodemon --env-file=.env app.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "AkshatRamanathan",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
